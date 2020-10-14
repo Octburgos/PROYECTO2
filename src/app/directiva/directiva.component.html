@@ -1,0 +1,18 @@
+<h1 *ngIf="mostrarse">Archivo de directiva</h1>
+<p *ngIf="mostrarse">directiva works!</p>
+<br />
+<button (click)="ocultarMensaje()">Ocultar</button>
+
+<button (click)="mostrarMensaje()">Mostrar</button>
+
+<br />
+
+<h4 *ngFor="let number of arregloNumeros">{{ number }}</h4>
+
+
+
+<br>
+
+<h4>10</h4>
+<h4>11</h4>
+<h4>12</h4>
