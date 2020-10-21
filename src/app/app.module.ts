@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
+import { FormsModule } from "@angular/forms";
 import { AppComponent } from './app.component';
 import { DirectivaComponent } from './directiva/directiva.component';
 
@@ -10,7 +10,7 @@ import { DirectivaComponent } from './directiva/directiva.component';
     DirectivaComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule, FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

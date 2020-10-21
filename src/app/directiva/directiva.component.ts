@@ -8,8 +8,15 @@ import { Component, OnInit } from '@angular/core';
 export class DirectivaComponent implements OnInit {
   mostrarse: boolean = true;
   arregloNumeros: number[] =[1,2,3,4,5];
-  constructor() {}
+  
+  arregloNombres: string[] =["isajar","gustavo","octavio"];
+  numero: number;  
 
+
+  
+  
+  constructor() {}
+  
  
   ngOnInit(): void {}
 
@@ -19,5 +26,9 @@ export class DirectivaComponent implements OnInit {
 
   mostrarMensaje(){
     this.mostrarse = true
+  }
+// la funcion push agrega un nuevo elemento al arreglo, 
+  agregarNumero(){
+    this.arregloNumeros.push(this.numero);
   }
 }

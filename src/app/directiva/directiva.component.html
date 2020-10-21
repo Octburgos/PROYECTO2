@@ -1,5 +1,26 @@
-<h1 *ngIf="mostrarse">Archivo de directiva</h1>
-<p *ngIf="mostrarse">directiva works!</p>
+<div class="formulario">
+   <label for="name"> <b>NUMERO</b> </label>
+<input [(ngModel)]="numero" type="number" name="numero" />
+<br>
+<br>
+<div class="centrado"> 
+    <button (click)="agregarNumero()"> AGREGAR </button>
+</div>
+
+</div>
+
+
+
+
+<!--ngIf: La aparicion de la etiqueta html en la pantalla,
+     es dependiente del valor de una variable-->
+     <!--la directiva va como atributo de la etiqueta-->
+<div *ngIf="mostrarse">
+
+    <h1>Archivo de directiva</h1>
+    <p>directiva works!</p>
+
+</div>
 <br />
 <button (click)="ocultarMensaje()">Ocultar</button>
 
@@ -7,6 +28,15 @@
 
 <br />
 
+<!--ngFor: repite la etiqueta 
+    tantas veces como elementos tenga el arreglo-->
+    <!--for(int i=0; i<arregloNumeros.lengh; i++){
+            number = arreloNumeros[i];
+            <h4> {{number}} </h4>    
+    
+    }-->
+    <!--el nombre despues del let tiene que ser 
+        igual al que esta entre {{}} -->
 <h4 *ngFor="let number of arregloNumeros">{{ number }}</h4>
 
 
@@ -16,3 +46,13 @@
 <h4>10</h4>
 <h4>11</h4>
 <h4>12</h4>
+
+
+<br>
+<h4 *ngFor="let nombre of arregloNombres"> {{ nombre }}</h4>
+
+<!--for(int i=0; i<arregloNombres.lengh; i++){
+            nombre = arreloNombres[i];
+            <h4> {{nombre}} </h4>    
+    
+    }-->
