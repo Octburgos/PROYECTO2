@@ -7,10 +7,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DirectivaComponent implements OnInit {
   mostrarse: boolean = true;
-  arregloNumeros: number[] =[1,2,3,4,5];
+  arregloNumeros: number[] =[];
   
   arregloNombres: string[] =["isajar","gustavo","octavio"];
-  numero: number;  
+  numero: number;
+  //creamos un objeto
+  persona: any = {
+    nombre: "Gustavo", 
+    apellido: "Springles",
+    edad: 28,
+    
+  }  
+
 
 
   
@@ -30,5 +38,6 @@ export class DirectivaComponent implements OnInit {
 // la funcion push agrega un nuevo elemento al arreglo, 
   agregarNumero(){
     this.arregloNumeros.push(this.numero);
+    this.numero = undefined;
   }
 }
