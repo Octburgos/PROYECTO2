@@ -59,4 +59,41 @@
             <h4> {{nombre}} </h4>    
     
     }-->
-<h2>{{persona.nombre}} {{persona.apellido}}</h2>
+<h2>{{persona1.nombre}} {{persona1.apellido}}</h2>
+
+<h4 *ngFor="let persona of arregloPersonas">{{ persona.nombre }} 
+    {{persona.apellido}} {{persona.edad}} </h4>
+
+<h4>{{persona1.nombre}}</h4>
+
+<h4>{{persona1.apellido}}</h4>
+
+<h4>{{persona1.edad}}</h4>
+
+
+<div *ngFor="let persona of arregloPersonas">
+<h4>{{persona.nombre}}</h4>
+<h4>{{persona.apellido}}</h4>
+<h4>{{persona.edad}}</h4>
+</div>
+
+<br>
+<br>
+<br>
+
+<table>
+    <tr>
+      <th>Nombre</th>
+      <th>Apellido</th>
+      <th>Edad</th>
+    </tr>
+    <tr *ngFor="let persona of arregloPersonas">
+      <td>{{persona.nombre}}</td>
+      <td>{{persona.apellido}}</td>
+      <td>{{persona.edad}}</td>
+    </tr>
+    
+  </table>
+  
+  
+  <app-tarjeta-persona [nombre]="persona3.nombre" [apellido] = "persona3.apellido"></app-tarjeta-persona>

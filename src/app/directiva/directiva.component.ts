@@ -12,12 +12,28 @@ export class DirectivaComponent implements OnInit {
   arregloNombres: string[] =["isajar","gustavo","octavio"];
   numero: number;
   //creamos un objeto
-  persona: any = {
+  persona1: any = {
     nombre: "Gustavo", 
     apellido: "Springles",
     edad: 28,
     
   }  
+
+  persona2: any = {
+    nombre: "Octavio", 
+    apellido: "Burgos",
+    edad: 27,
+    
+  }  
+
+  persona3: any = {
+    nombre: "Isajar", 
+    apellido: "Spector",
+    edad: 28,
+    
+  }  
+  arregloPersonas: any[] = [this.persona1, this.persona2, this.persona3];
+
 
 
 
