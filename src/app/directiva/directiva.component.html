@@ -95,5 +95,20 @@
     
   </table>
   
+  <div *ngIf="mostrarse">
+    
+  <app-tarjeta-persona *ngFor= "let persona of arregloPersonas" [nombre]="persona.nombre" [apellido] = "persona.apellido" [edad] = "persona.edad" [tel] = "persona.tel"></app-tarjeta-persona>
+  <br>
+  <br>
+ </div>
+ 
+ <!-- El signo ! niega la variable, es decir que va a dar verdadero cuando la variable es falsa-->
+ <div *ngIf="!mostrarse">
+  <app-tarjeta2 *ngFor= "let persona of arregloPersonas" [nombre]="persona.nombre" [apellido] = "persona.apellido" [edad] = "persona.edad" [tel] = "persona.tel"></app-tarjeta2>
+
+
+
+
   
-  <app-tarjeta-persona [nombre]="persona3.nombre" [apellido] = "persona3.apellido"></app-tarjeta-persona>
+    
+  </div>

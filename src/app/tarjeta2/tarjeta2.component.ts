@@ -1,15 +1,16 @@
 import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
-  selector: 'app-tarjeta-persona',
-  templateUrl: './tarjeta-persona.component.html',
-  styleUrls: ['./tarjeta-persona.component.css']
+  selector: 'app-tarjeta2',
+  templateUrl: './tarjeta2.component.html',
+  styleUrls: ['./tarjeta2.component.css']
 })
-export class TarjetaPersonaComponent implements OnInit {
-
+export class Tarjeta2Component implements OnInit {
+  
   @Input() nombre: string;
   @Input() apellido: string;
   @Input() edad: string;
+ 
   @Input() tel: string;
   constructor() { }
 

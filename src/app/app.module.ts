@@ -4,12 +4,14 @@ import { FormsModule } from "@angular/forms";
 import { AppComponent } from './app.component';
 import { DirectivaComponent } from './directiva/directiva.component';
 import { TarjetaPersonaComponent } from './tarjeta-persona/tarjeta-persona.component';
+import { Tarjeta2Component } from './tarjeta2/tarjeta2.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     DirectivaComponent,
-    TarjetaPersonaComponent
+    TarjetaPersonaComponent,
+    Tarjeta2Component
   ],
   imports: [
     BrowserModule, FormsModule
