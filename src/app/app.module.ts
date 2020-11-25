@@ -5,13 +5,15 @@ import { AppComponent } from './app.component';
 import { DirectivaComponent } from './directiva/directiva.component';
 import { TarjetaPersonaComponent } from './tarjeta-persona/tarjeta-persona.component';
 import { Tarjeta2Component } from './tarjeta2/tarjeta2.component';
+import { FormularioPersonaComponent } from './formulario-persona/formulario-persona.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     DirectivaComponent,
     TarjetaPersonaComponent,
-    Tarjeta2Component
+    Tarjeta2Component,
+    FormularioPersonaComponent
   ],
   imports: [
     BrowserModule, FormsModule
