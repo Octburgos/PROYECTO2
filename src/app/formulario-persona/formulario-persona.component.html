@@ -24,5 +24,11 @@
  <div class="centrado"> 
      <button (click)="agregarDatos()"> AGREGAR </button>
  </div>
+</div>
  
- </div>
+
+
+
+ <app-tarjeta-persona *ngFor="let persona of arregloDatos" [nombre]="persona.nombre" [apellido] = "persona.apellido" [edad] = "persona.edad" [tel] = "persona.tel" >
+    
+   

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, } from '@angular/core';
 
 @Component({
   selector: 'app-formulario-persona',
@@ -9,11 +9,11 @@ export class FormularioPersonaComponent implements OnInit {
 
   constructor() { }
 
-  nombre: string;
-  apellido: string;
-  edad: number;
-  telefono: number;
-  arregloDatos:any[] = [];
+   nombre: string;
+   apellido: string;
+   edad: number;
+   telefono: number;
+   arregloDatos:any[] = [];
   
 
   ngOnInit(): void {
@@ -29,10 +29,17 @@ agregarDatos(){
     apellido: this.apellido,
     edad: this.edad,
     tel: this.telefono,
-    
   }  
 // agregamos el objeto creado al arreglo.
   this.arregloDatos.push(usuario);
+  this.resetFormulario();
+}
+
+resetFormulario(){
+  this.nombre = undefined;
+  this.apellido = undefined;
+  this.edad = undefined;
+  this.telefono = undefined;
 }
 }
 
