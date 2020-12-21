@@ -6,6 +6,9 @@ import { DirectivaComponent } from './directiva/directiva.component';
 import { TarjetaPersonaComponent } from './tarjeta-persona/tarjeta-persona.component';
 import { Tarjeta2Component } from './tarjeta2/tarjeta2.component';
 import { FormularioPersonaComponent } from './formulario-persona/formulario-persona.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatInputModule } from '@angular/material/input';
+import {MatFormFieldModule} from '@angular/material/form-field';
 
 @NgModule({
   declarations: [
@@ -16,7 +19,7 @@ import { FormularioPersonaComponent } from './formulario-persona/formulario-pers
     FormularioPersonaComponent
   ],
   imports: [
-    BrowserModule, FormsModule
+    BrowserModule, FormsModule, BrowserAnimationsModule, MatInputModule, MatFormFieldModule
   ],
   providers: [],
   bootstrap: [AppComponent]

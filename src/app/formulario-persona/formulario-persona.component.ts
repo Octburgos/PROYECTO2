@@ -30,6 +30,11 @@ agregarDatos(){
     edad: this.edad,
     tel: this.telefono,
   }  
+  let usuario2: any = {
+    nombre: this.nombre, 
+    
+  
+  }  
 // agregamos el objeto creado al arreglo.
   this.arregloDatos.push(usuario);
   this.resetFormulario();

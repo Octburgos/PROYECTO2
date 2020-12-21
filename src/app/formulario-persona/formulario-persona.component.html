@@ -24,11 +24,44 @@
  <div class="centrado"> 
      <button (click)="agregarDatos()"> AGREGAR </button>
  </div>
+ 
 </div>
+
+<form class="example-form">
+    <mat-form-field class="example-full-width">
+      <mat-label>Nombre Completo</mat-label>
+      <input matInput placeholder="Ej. JUAN " type= "text" >
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+        <mat-label>Apellido</mat-label>
+        <input matInput placeholder="Ej. PEREZ" type= "text">
+      </mat-form-field>
+  
+      <mat-form-field class="example-full-width">
+        <mat-label>Nombre Completo</mat-label>
+        <input matInput placeholder="Ej. JUAN PEREZ" >
+      </mat-form-field>
+  </form>   
+  
  
 
 
 
- <app-tarjeta-persona *ngFor="let persona of arregloDatos" [nombre]="persona.nombre" [apellido] = "persona.apellido" [edad] = "persona.edad" [tel] = "persona.tel" >
+ <app-tarjeta-persona *ngFor="let persona of arregloDatos" 
+ [nombre]="persona.nombre"
+  [apellido] = "persona.apellido" 
+  [edad] = "persona.edad" 
+  [tel] = "persona.tel" >
     
-   
+
+
+  <div *ngFor="let persona of arregloDatos">
+ <h4>Nombre: {{persona.nombre}}</h4>
+<h4>Apellido: {{persona.apellido}}</h4>
+<h4>Edad: {{persona.edad}}</h4>
+<h4>Telefono: {{persona.tel}}</h4>
+</div>
+
+
+
