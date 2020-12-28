@@ -1,3 +1,4 @@
+<!--formulario donde los campos estan relacionados con un ng model-->
 <div class="formulario">
  <label class= "datos" for="nombre"> <b>NOMBRE</b> </label>
  <input [(ngModel)]="nombre" type="text" name="nombre" />
@@ -26,38 +27,56 @@
  </div>
  
 </div>
+<br>
+<hr>
 
-<form class="example-form">
+<!--formulario donde los campos estan relacionados con un objeto formgroup-->
+<form class="example-form" [formGroup]= "personaForm">
     <mat-form-field class="example-full-width">
       <mat-label>Nombre Completo</mat-label>
-      <input matInput placeholder="Ej. JUAN " type= "text" >
+      <input matInput placeholder="Ej. JUAN " type= "text" formControlName="nom" >
+      <mat-error>Complete el nombre</mat-error>
     </mat-form-field>
 
     <mat-form-field class="example-full-width">
         <mat-label>Apellido</mat-label>
-        <input matInput placeholder="Ej. PEREZ" type= "text">
+        <input matInput placeholder="Ej. PEREZ" type= "text" formControlName="ape">
+        <mat-error>Complete el apellido</mat-error>
       </mat-form-field>
   
       <mat-form-field class="example-full-width">
-        <mat-label>Nombre Completo</mat-label>
-        <input matInput placeholder="Ej. JUAN PEREZ" >
+        <mat-label>Edad</mat-label>
+        <input matInput placeholder="Ej. 18" type="number" formControlName="ed" >
+        <mat-error>Complete la edad</mat-error>
       </mat-form-field>
-  </form>   
-  
- 
+
+      <mat-form-field class="example-full-width">
+        <mat-label>Telefono</mat-label>
+        <input matInput placeholder="Ej. 343 444444" type="number" formControlName="tel" >
+        <mat-error>Complete el numero de telefono</mat-error>
+      </mat-form-field>
+     
+      
+     <div class="centrado">
+       <button mat-raised-button color="primary" (click) = "agregarPersona()">AGREGAR</button>
+     </div>
 
 
+</form>
 
  <app-tarjeta-persona *ngFor="let persona of arregloDatos" 
- [nombre]="persona.nombre"
-  [apellido] = "persona.apellido" 
-  [edad] = "persona.edad" 
+ [nombre]="persona.nom"
+  [apellido] = "persona.ape" 
+  [edad] = "persona.ed" 
   [tel] = "persona.tel" >
     
 
+   
 
+
+  
   <div *ngFor="let persona of arregloDatos">
- <h4>Nombre: {{persona.nombre}}</h4>
+<h4>Nombre: {{persona.nombre}}</h4>
 <h4>Apellido: {{persona.apellido}}</h4>
 <h4>Edad: {{persona.edad}}</h4>
 <h4>Telefono: {{persona.tel}}</h4>
