@@ -27,11 +27,12 @@ export class FormularioPersonaComponent implements OnInit {
  
   // funcion que se ejecuta automaticamente (no la ejecutamos nosotros)
   // cuando se inicia el componente
+  // Lista completa de validadores en --> https://angular.io/api/forms/Validators#min
   ngOnInit(): void {
     this.personaForm = this.fb.group({
     nom:["", Validators.required],
     ape:["", Validators.required],
-    ed:["", Validators.required],
+    ed:["",[ Validators.required, Validators.min(18), Validators.max(60)]],
     tel:["", Validators.required],
     })
   }

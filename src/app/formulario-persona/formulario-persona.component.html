@@ -47,7 +47,7 @@
       <mat-form-field class="example-full-width">
         <mat-label>Edad</mat-label>
         <input matInput placeholder="Ej. 18" type="number" formControlName="ed" >
-        <mat-error>Complete la edad</mat-error>
+        <mat-error>Complete la edad (18 - 60)</mat-error>
       </mat-form-field>
 
       <mat-form-field class="example-full-width">
@@ -58,7 +58,7 @@
      
       
      <div class="centrado">
-       <button mat-raised-button color="primary" (click) = "agregarPersona()">AGREGAR</button>
+       <button [disabled]="!personaForm.valid" mat-raised-button color="primary" (click) = "agregarPersona()">AGREGAR</button>
      </div>
 
 
