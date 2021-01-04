@@ -1,1 +1,13 @@
-<app-formulario-persona></app-formulario-persona>
+<!--mat-toolbar: es una barra de navegacion que me permite ir agregando botones para hacer el ruteo,
+cada boton es una etiqueta de tipo "a" que se compone de un atributo "href" al cual le especifico 
+a que ruta se tiene que dirigir cuando es pulsado el boton.
+-->
+<mat-toolbar class="separacion" color="primary">
+    <a mat-button href="formulario-persona" >Formulario</a>
+    <a mat-button href="directiva" >Directiva</a>
+  </mat-toolbar>
+
+  <!--el router outlet es una etiqueta comodin que va a tomar
+     el valor del componente cuya ruta este activa-->
+<router-outlet></router-outlet>
+
