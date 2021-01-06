@@ -1,6 +1,6 @@
 import { Component, OnInit, } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-
+import { PersonaService} from '../services/persona.service';
 @Component({
   selector: 'app-formulario-persona',
   templateUrl: './formulario-persona.component.html',
@@ -22,7 +22,7 @@ export class FormularioPersonaComponent implements OnInit {
 //2-Crear una variable del tipo formBuilder dentro del contructor.
 //3- Dentro del ngOnInit unimos el objeto del tipo formGroup con el formBuilder, 
 //asignando cada propiedad con un valor y un validador.
-  constructor(private fb: FormBuilder) { }
+  constructor(private fb: FormBuilder, private personaService: PersonaService) { }
 
  
   // funcion que se ejecuta automaticamente (no la ejecutamos nosotros)
@@ -77,6 +77,7 @@ agregarPersona(){
   }
   // agregamos el objeto creado al arreglo.
   this.arregloDatos.push(persona);
+  this.personaService.agregarPersona(persona)
   //reset el formulario utilizando una funcion que esta implementada en el
   //objeto formulario
   this.personaForm.reset();
