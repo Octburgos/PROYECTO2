@@ -22,6 +22,8 @@ export class FormularioPersonaComponent implements OnInit {
 //2-Crear una variable del tipo formBuilder dentro del contructor.
 //3- Dentro del ngOnInit unimos el objeto del tipo formGroup con el formBuilder, 
 //asignando cada propiedad con un valor y un validador.
+
+// personaService es una variable que nos permite acceder al servicio.
   constructor(private fb: FormBuilder, private personaService: PersonaService) { }
 
  
@@ -76,7 +78,7 @@ agregarPersona(){
     tel: this.personaForm.value["tel"],
   }
   // agregamos el objeto creado al arreglo.
-  this.arregloDatos.push(persona);
+  
   this.personaService.agregarPersona(persona)
   //reset el formulario utilizando una funcion que esta implementada en el
   //objeto formulario

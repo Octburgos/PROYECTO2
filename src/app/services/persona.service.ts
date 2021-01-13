@@ -4,11 +4,19 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class PersonaService {
-arregloPersonas: any [];
+ // arregloPersona es un arreglo que va a almacenar
+ // objetos del tipo persona adentro. 
+arregloPersonas: any [] = [];
   constructor() { }
   
-
+// esta funcion sirve para agregar una persona al arreglo.
   agregarPersona(persona:any){
     this.arregloPersonas.push(persona);
+    
+  }
+
+// funcion que devuelve el arreglo de personas.
+  obtenerPersonas(){
+    return this.arregloPersonas;
   }
 }
