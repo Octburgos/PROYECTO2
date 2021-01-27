@@ -13,17 +13,25 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatCardModule} from '@angular/material/card';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import { AppRoutingModule } from './app-routing.module';
+import { NuevoComponenteComponent } from './nuevo-componente/nuevo-componente.component';
+import { HttpClientModule } from '@angular/common/http';
+import { TarjetaUsuarioComponent } from './tarjeta-usuario/tarjeta-usuario.component';
+import {MatTableModule} from '@angular/material/table';
+
 @NgModule({
   declarations: [
     AppComponent,
     DirectivaComponent,
     TarjetaPersonaComponent,
     Tarjeta2Component,
-    FormularioPersonaComponent
+    FormularioPersonaComponent,
+    NuevoComponenteComponent,
+    TarjetaUsuarioComponent
   
   ],
   imports: [
-    BrowserModule, FormsModule, BrowserAnimationsModule, MatInputModule, MatFormFieldModule, ReactiveFormsModule, MatButtonModule, MatCardModule,MatToolbarModule, AppRoutingModule
+    BrowserModule, FormsModule, BrowserAnimationsModule, MatInputModule, MatFormFieldModule, ReactiveFormsModule, MatButtonModule, MatCardModule,MatToolbarModule, AppRoutingModule, 
+    HttpClientModule, MatTableModule
   ],
   providers: [],
   bootstrap: [AppComponent]

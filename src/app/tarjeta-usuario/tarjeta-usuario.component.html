@@ -1,0 +1,54 @@
+<!--
+    <mat-card *ngFor="let p of arregloUsuarios" class= "tarjeta">
+    <mat-card-title>Identificacion: </mat-card-title><mat-card-subtitle class="color-blanco">{{p.id}}</mat-card-subtitle>
+    <mat-card-title>Nombre: </mat-card-title><mat-card-subtitle class="color-blanco">{{p.name}}</mat-card-subtitle>
+    <mat-card-title>Genero: </mat-card-title><mat-card-subtitle class="color-blanco">{{p.gender}}</mat-card-subtitle>
+    <mat-card-title>Email: </mat-card-title><mat-card-subtitle class="color-blanco">{{p.email}}</mat-card-subtitle>
+    <mat-card-title>Estado: </mat-card-title><mat-card-subtitle class="color-blanco">{{p.status}}</mat-card-subtitle>
+</mat-card>
+-->
+
+
+
+
+<!--[dataSource]:determinamos de donde sacamos los datos, 
+    (arregloUsuario)-->
+<table mat-table [dataSource]="arregloUsuarios">
+
+    <!--- Note that these columns can be defined in any order.
+          The actual rendered columns are set as a property on the row definition" -->
+  
+    <!-- Id Column
+    matColumnDef : sirve para idenficiar la columna -->
+    <ng-container matColumnDef="id">
+      <th mat-header-cell *matHeaderCellDef> ID </th>
+      <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+    </ng-container>
+  
+    <!-- Name Column -->
+    <ng-container matColumnDef="name">
+      <th mat-header-cell *matHeaderCellDef> Name </th>
+      <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+    </ng-container>
+  
+    <!-- Gender Column -->
+    <ng-container matColumnDef="gender">
+      <th mat-header-cell *matHeaderCellDef> Gender </th>
+      <td mat-cell *matCellDef="let element"> {{element.gender}} </td>
+    </ng-container>
+  
+    <!-- Email Column -->
+    <ng-container matColumnDef="email">
+      <th mat-header-cell *matHeaderCellDef> Email </th>
+      <td mat-cell *matCellDef="let element"> {{element.email}} </td>
+    </ng-container>
+  
+     <!-- Status Column -->
+     <ng-container matColumnDef="status">
+        <th mat-header-cell *matHeaderCellDef> Status </th>
+        <td mat-cell *matCellDef="let element"> {{element.status}} </td>
+      </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="columnasAMostrar"></tr>
+    <tr mat-row *matRowDef="let row; columns: columnasAMostrar;"></tr>
+  </table>
