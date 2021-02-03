@@ -19,4 +19,9 @@ export class UsuarioService {
   obtenerUsuarios(){
     return this.http.get("https://gorest.co.in/public-api/users");
   }
+  
+// obtenemos el detalle de un usuario pasandole el id.
+  obtenerUsuario(id:number){
+    return this.http.get("https://gorest.co.in/public-api/users/"+id)
+  }
 }

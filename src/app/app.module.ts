@@ -17,6 +17,7 @@ import { NuevoComponenteComponent } from './nuevo-componente/nuevo-componente.co
 import { HttpClientModule } from '@angular/common/http';
 import { TarjetaUsuarioComponent } from './tarjeta-usuario/tarjeta-usuario.component';
 import {MatTableModule} from '@angular/material/table';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,7 @@ import {MatTableModule} from '@angular/material/table';
   ],
   imports: [
     BrowserModule, FormsModule, BrowserAnimationsModule, MatInputModule, MatFormFieldModule, ReactiveFormsModule, MatButtonModule, MatCardModule,MatToolbarModule, AppRoutingModule, 
-    HttpClientModule, MatTableModule
+    HttpClientModule, MatTableModule, MatSnackBarModule
   ],
   providers: [],
   bootstrap: [AppComponent]

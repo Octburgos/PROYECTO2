@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { UsuarioService } from '../services/usuario.service';
 
 
@@ -10,8 +11,9 @@ import { UsuarioService } from '../services/usuario.service';
 export class TarjetaUsuarioComponent implements OnInit {
   arregloUsuarios: any[] = []
   columnasAMostrar: string[] = ['id', 'name', 'gender','status', 'email' ];
+  idUsuario: number;
 
-  constructor( private usuarioService: UsuarioService ) {
+  constructor( private usuarioService: UsuarioService, private _snackBar: MatSnackBar ) {
 
    }
 
@@ -27,8 +29,30 @@ export class TarjetaUsuarioComponent implements OnInit {
     //Respuesta.data contiene el arreglo de usuarios que le estamos pidiendo a la base de datos.
     //Esto lo guardamos en nuestro arregloUsuarios
     this.arregloUsuarios = respuesta.data;
+    
+    //
     console.log(this.arregloUsuarios);
     })
-  }
 
-}
+    
+  }//fin ngOnInit
+
+  //funcion para buscar un usuario en base al id que se ingrese en el input.
+  buscarUsuario(){
+    //llamamos a la funcion obtenerUsuario del servicio usuario pasandole el idUsuario.
+    this.usuarioService.obtenerUsuario(this.idUsuario).subscribe( (respuesta:any) => {
+      this.mostrarMensaje(respuesta.data.name + " " + respuesta.data.email )
+      console.log("respuesta de buscarUsuario:", respuesta)
+    });
+    
+    
+  }//fin buscar usuario
+
+  mostrarMensaje(message: string){
+    this._snackBar.open(message,"", {
+      duration: 5000,
+    });
+  }
+   
+}// fin de la clase
+   
