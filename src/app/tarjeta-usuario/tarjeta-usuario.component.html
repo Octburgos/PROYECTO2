@@ -11,7 +11,7 @@
 <label class= "datos" for="idUsuario"> <b>ID USUARIO</b> </label>
  <input [(ngModel)]="idUsuario" type="number" name="idUsuario" />
  <button mat-raised-button color="primary" (click)="buscarUsuario()">BUSCAR</button>
-
+ <button mat-raised-button color="primary" (click)="eliminarUsuario()">ELIMINAR</button>
 <!--[dataSource]:determinamos de donde sacamos los datos, -
     (arregloUsuario)-->
 <table mat-table [dataSource]="arregloUsuarios">

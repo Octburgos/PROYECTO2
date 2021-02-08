@@ -42,17 +42,33 @@ export class TarjetaUsuarioComponent implements OnInit {
     //llamamos a la funcion obtenerUsuario del servicio usuario pasandole el idUsuario.
     this.usuarioService.obtenerUsuario(this.idUsuario).subscribe( (respuesta:any) => {
       this.mostrarMensaje(respuesta.data.name + " " + respuesta.data.email )
-      console.log("respuesta de buscarUsuario:", respuesta)
+    //console.log("respuesta de buscarUsuario:", respuesta)
     });
     
     
   }//fin buscar usuario
 
+  //funcion para eliminar un usuario en base al id que se ingrese en el input.
+  eliminarUsuario(){
+    this.usuarioService.eliminarUsuario(this.idUsuario).subscribe( (respuesta:any)=>{
+    //console.log(respuesta);
+
+    // preguntamos si el codigo de la respuesta el 204 (eliminacion exitosa). Caso afirmativo mostramos id usuario eliminado.
+    // caso negativo mostramos error al eliminar usuario.
+    if(respuesta.code == 204){
+      this.mostrarMensaje("El usuario con el ID" + " " + this.idUsuario + " " +"fue eliminado");
+    } else{
+      this.mostrarMensaje("Error al eliminar usuario")
+    }
+      
+    });
+  }// fin eliminar usuario.
+
   mostrarMensaje(message: string){
     this._snackBar.open(message,"", {
       duration: 5000,
     });
-  }
+  } // FIN MOSTRAR MENSAJE
    
 }// fin de la clase
    

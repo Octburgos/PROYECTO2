@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http'
+import { HttpClient, HttpHeaders } from '@angular/common/http'
 @Injectable({
   providedIn: 'root'
 })
@@ -23,5 +23,15 @@ export class UsuarioService {
 // obtenemos el detalle de un usuario pasandole el id.
   obtenerUsuario(id:number){
     return this.http.get("https://gorest.co.in/public-api/users/"+id)
+  }
+
+//eliminamos usuario de la base de datos buscandolo por el id.
+  eliminarUsuario(id:number){
+    //El headers es una cabecera que se agrega a la consulta donde agregamos nuestro token (nuestra firma),
+    //para indicarle al servidor que estamos autorizados a hacer este tipo de consultas.
+    const headers = new HttpHeaders({
+      Authorization: "Bearer c8905a6ccb7fb259a42800929905d42cbab2f5286e2356e571b37acdf0085650",
+    });
+    return this.http.delete("https://gorest.co.in/public-api/users/"+id, {headers});
   }
 }
