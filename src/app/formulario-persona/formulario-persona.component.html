@@ -82,3 +82,39 @@
 <h4>Telefono: {{persona.tel}}</h4>
 </div>
 --> 
+
+
+<hr>
+<br>
+<form class="example-form" [formGroup]= "usuarioForm">
+  <mat-form-field class="example-full-width">
+    <mat-label>NAME</mat-label>
+    <input matInput placeholder="Ej. JUAN " type= "text" formControlName="name" >
+    <mat-error>Complete el nombre</mat-error>
+  </mat-form-field>
+
+  <mat-form-field class="example-full-width">
+      <mat-label>EMAIL</mat-label>
+      <input matInput placeholder="Ej. juan@hotmail.com" type= "text" formControlName="email">
+      <mat-error>Complete el apellido</mat-error>
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+      <mat-label>GENDER</mat-label>
+      <input matInput placeholder="" type="text" formControlName="gender" >
+      <mat-error>Complete el genero</mat-error>
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+      <mat-label>STATUS</mat-label>
+      <input matInput placeholder="Ej. activo" type="text" formControlName="status" >
+      <mat-error>Complete el estado</mat-error>
+    </mat-form-field>
+   
+    
+   <div class="centrado">
+     <button [disabled]="!usuarioForm.valid" mat-raised-button color="primary" (click) = "agregarUsuario()">AGREGAR</button>
+   </div>
+
+
+</form>

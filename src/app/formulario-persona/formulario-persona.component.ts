@@ -1,6 +1,8 @@
 import { Component, OnInit, } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { PersonaService} from '../services/persona.service';
+import { UsuarioService } from '../services/usuario.service';
 @Component({
   selector: 'app-formulario-persona',
   templateUrl: './formulario-persona.component.html',
@@ -14,8 +16,10 @@ export class FormularioPersonaComponent implements OnInit {
    edad: number;
    telefono: number;
    arregloDatos:any[] = [];
+   arregloUsuarios: any[] = [];
 // variables para formulario.
   personaForm: FormGroup;
+  usuarioForm: FormGroup;
  
 // PASOS PARA CONSTRUIR UN FORMULARIO REACTIVOS:
 //1-Crear un objeto del tipo FormGroup (en este caso personaForm)
@@ -24,7 +28,7 @@ export class FormularioPersonaComponent implements OnInit {
 //asignando cada propiedad con un valor y un validador.
 
 // personaService es una variable que nos permite acceder al servicio.
-  constructor(private fb: FormBuilder, private personaService: PersonaService) { }
+  constructor(private fb: FormBuilder, private personaService: PersonaService, private usuarioService: UsuarioService, private _snackBar: MatSnackBar) { }
 
  
   // funcion que se ejecuta automaticamente (no la ejecutamos nosotros)
@@ -36,6 +40,13 @@ export class FormularioPersonaComponent implements OnInit {
     ape:["", Validators.required],
     ed:["",[ Validators.required, Validators.min(18), Validators.max(60)]],
     tel:["", Validators.required],
+    })
+
+    this.usuarioForm = this.fb.group({
+    name:["", Validators.required],
+    email:["", Validators.required],
+    gender:["", Validators.required,],
+    status:["", Validators.required],
     })
   }
 
@@ -84,10 +95,38 @@ agregarPersona(){
   //objeto formulario
   this.personaForm.reset();
 }
+
+agregarUsuario(){
+  //creamos un objeto para guardar los valores 
+  //del objeto formulario (personaForm)
+  let usuario: any = {
+    name: this.usuarioForm.value["name"],
+    email: this.usuarioForm.value["email"],
+    gender: this.usuarioForm.value["gender"],
+    status: this.usuarioForm.value["status"],
+  }
+
+this.usuarioService.agregarUsuario(usuario).subscribe( (respuesta:any) =>{
+
+  console.log(respuesta);
+if (respuesta.code == 201){
+  this.mostrarMensaje("El usuario fue creado correctamente con un ID" + " " + respuesta.data.id);
+} else {
+  this.mostrarMensaje("No se pudo crear usuario correctamente")
 }
+  
+});
+
+
+
+} //fin agregar usuario
+mostrarMensaje(message: string){
+  this._snackBar.open(message,"", {
+    duration: 5000,
+  });
+}// fin de mostrar mensaje.
 
 
 
 
-
-
+}// fin de clase

@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http'
+
 @Injectable({
   providedIn: 'root'
 })
@@ -33,5 +34,17 @@ export class UsuarioService {
       Authorization: "Bearer c8905a6ccb7fb259a42800929905d42cbab2f5286e2356e571b37acdf0085650",
     });
     return this.http.delete("https://gorest.co.in/public-api/users/"+id, {headers});
+  }
+
+  //agregamos usuario.
+  agregarUsuario(usuario: any){
+    const headers = new HttpHeaders({
+      Authorization: "Bearer c8905a6ccb7fb259a42800929905d42cbab2f5286e2356e571b37acdf0085650",
+    });
+    // hacemos una consulta de tipo post (agregar algo a la base de datos) y le pasamos
+    // 1- link.
+    // 2- body: lo que queremos guardar, en este caso es el usuario.
+    // 3- headers: autorizacion.
+    return this.http.post("https://gorest.co.in/public-api/users", usuario, {headers});
   }
 }
